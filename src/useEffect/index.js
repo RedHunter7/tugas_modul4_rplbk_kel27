@@ -34,7 +34,7 @@ export default function Index() {
     return (
         <div className="Main">
             <p className="Text"> Learn useEffect</p>
-            <p>KELOMPOKXX</p>
+            <p>KELOMPOK27</p>
             <ul>
                 {data.slice(0, 10).map((value) => (
                     <li key={value.id}>{value.title}</li>
