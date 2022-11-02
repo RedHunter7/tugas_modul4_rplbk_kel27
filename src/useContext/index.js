@@ -1,4 +1,3 @@
-// nambah aja ngerjain bareng :
 import React, { useState, useContext } from "react";
 import "./index.css";
 const themes = {
