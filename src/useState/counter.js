@@ -1,11 +1,13 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import logo from "../logo.svg";
+import { Link } from "react-router-dom";
+import { profileContext } from "../useContext/profileContext";
 import "./counter.css";
 
 export default function Counter() {
     // state untuk input text
     const [inputValue, setInputValue] = useState('')
-
+    const { profile } = useContext(profileContext);
     const [showImage, setShowImage] = useState(true);
     const [count, setCount] = useState(0);
     const countUp = () => {
@@ -24,8 +26,17 @@ export default function Counter() {
     }
     return (
         <div className="Main">
+             <div>
+        Selamat Datang {profile?.name} Umur {profile?.age} di Praktikum RPLBK
+        <p className="notify">
+          *Nama dan umur dapat diganti pada halaman{" "}
+          <span>
+            <Link to="/context">Use Context</Link>
+          </span>
+        </p>
+      </div>
             <p className="Text">Counter with useState</p>
-            <p>KELOMPOK XX</p>
+            <p>KELOMPOK 27  </p>
             <input type='text' onChange={inputHandler}/>
             <p>{ inputValue }</p>
             <div className="ViewImage">
